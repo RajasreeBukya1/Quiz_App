@@ -1,0 +1,39 @@
+<template>
+     <div class="app slds-var-p-around_medium">
+        <div class="box">
+    <lightning-card title="Quiz App">
+        <template for:each={allQuestions} for:item="ques">
+            <div key={ques.id} class="slds-var-m-around_medium">
+                {ques.id}. {ques.question}
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <input type="radio" name={ques.id} value="a" onchange={handleRadio}>
+                        {ques.options.a}
+                    </div>
+                    <div class="slds-col">
+                        <input type="radio" name={ques.id}  value="b" onchange={handleRadio}>
+                        {ques.options.b}
+                    </div>
+                    <div class="slds-col">
+                        <input type="radio" name={ques.id} value="c" onchange={handleRadio}>
+                        {ques.options.c}
+                    </div>
+                </div>
+            </div>
+        </template>
+        <div class="slds-align_absolute-center">
+         <lightning-layout multiple rows>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-button variant="Success" label="Submit" title="Submit" onclick={handleSubmit}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-button variant="destructive" label="Reset" title="Reset" onclick={handleReset}></lightning-button>
+            </lightning-layout-item>
+         </lightning-layout>
+        </div>
+        <div if:true={isSubmitted} class="slds-align_absolute-center">
+            <strong>You have scored {correctAnswers}</strong></div>
+    </lightning-card>
+    </div>
+     </div>
+</template>
