@@ -1,4 +1,4 @@
-<h1># Quiz_App</h1>
+<h1>Quiz_App</h1>
 
 **Overview**
 
@@ -74,4 +74,9 @@ Clears selectedValue
 Resets score to 0
 
 Unchecks all radio buttons using DOM query selector
+
+**How it looks**
+<img width="3592" height="1977" alt="image" src="https://github.com/user-attachments/assets/836cc07c-142e-4d0c-a3f2-ab8d0c702082" />
+
+
 
